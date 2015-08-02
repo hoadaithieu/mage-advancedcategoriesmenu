@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VC_AdvancedCategoriesMenu>
+            <version>1.0.0</version>
+        </VC_AdvancedCategoriesMenu>
+    </modules>
+    <frontend>
+        <routers>
+            <vc_advancedcategoriesmenu>
+                <use>standard</use>
+                <args>
+                    <module>VC_AdvancedCategoriesMenu</module>
+                    <frontName>vc_advancedcategoriesmenu</frontName>
+                </args>
+            </vc_advancedcategoriesmenu>
+        </routers>
+        <layout>
+            <updates>
+                <vc_advancedcategoriesmenu>
+                    <file>vc_advancedcategoriesmenu.xml</file>
+                </vc_advancedcategoriesmenu>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<vc_advancedcategoriesmenu>
+				<use>admin</use>
+				<args>
+					<module>VC_AdvancedCategoriesMenu</module>
+					<frontName>vc_advancedcategoriesmenu</frontName>
+				</args>
+			</vc_advancedcategoriesmenu>
+        </routers>
+    </admin>
+    <adminhtml>
+		
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<vc_all>
+							<children>
+					
+								<vc_advancedcategoriesmenu>
+									<title>VC AdvancedCategoriesMenu</title>
+									<sort_order>70</sort_order>						
+									
+								</vc_advancedcategoriesmenu>
+							</children>
+						</vc_all>
+						<system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <vc_advancedcategoriesmenu>
+                                            <title>VC AdvancedCategoriesMenu Section</title>
+                                        </vc_advancedcategoriesmenu>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+												
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<vc_advancedcategoriesmenu>
+					<file>vc_advancedcategoriesmenu.xml</file>
+				</vc_advancedcategoriesmenu>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <vc_advancedcategoriesmenu>
+                <class>VC_AdvancedCategoriesMenu_Model</class>
+                <resourceModel>vc_advancedcategoriesmenu_resource</resourceModel>
+            </vc_advancedcategoriesmenu>
+			<catalog>
+				<rewrite>
+					<layer_filter_category>VC_AdvancedCategoriesMenu_Model_Catalog_Layer_Filter_Category</layer_filter_category>
+				</rewrite>
+			</catalog>
+        </models>	
+		
+		<resources>
+			<vc_advancedcategoriesmenu_setup>
+				<setup>
+					<module>VC_AdvancedCategoriesMenu</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</vc_advancedcategoriesmenu_setup>
+			<vc_advancedcategoriesmenu_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</vc_advancedcategoriesmenu_write>
+			<vc_advancedcategoriesmenu_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</vc_advancedcategoriesmenu_read>
+		</resources>
+				
+        <blocks>
+            <vc_advancedcategoriesmenu>
+                <class>VC_AdvancedCategoriesMenu_Block</class>
+            </vc_advancedcategoriesmenu>
+			
+			<catalog>
+				<rewrite>
+					<layer_filter_category>VC_AdvancedCategoriesMenu_Block_Catalog_Layer_Filter_Category</layer_filter_category>
+					
+				</rewrite>
+			</catalog>
+        </blocks>
+	
+        <helpers>
+            <vc_advancedcategoriesmenu>
+                <class>VC_AdvancedCategoriesMenu_Helper</class>
+            </vc_advancedcategoriesmenu>
+        </helpers>
+		
+    </global>
+	
+	<default>
+		<vc_advancedcategoriesmenu>
+			<general>
+				<enable>0</enable>
+				<container_3columns>.col-wrapper</container_3columns>
+				<container_2columns_left>.main</container_2columns_left>
+			</general>
+		</vc_advancedcategoriesmenu>
+	</default>
+	
+</config>

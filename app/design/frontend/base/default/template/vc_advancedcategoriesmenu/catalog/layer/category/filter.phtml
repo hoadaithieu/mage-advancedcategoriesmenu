@@ -1,0 +1,21 @@
+<?php
+/**
+ * Template for filter items block
+ *
+ * @see Mage_Catalog_Block_Layer_Filter
+ */
+?>
+<?php
+if (Mage::getStoreConfig('vc_advancedcategoriesmenu/general/layout_menu') == 2) :
+?>
+	<div class="tree-menu cat-tree" id="tree-menu">
+		<?php
+		echo $this->helper('vc_advancedcategoriesmenu')->renderFilter($this, $this->getItems(), 0);
+		?>
+	</div>
+<?php
+else:
+	echo $this->helper('vc_advancedcategoriesmenu')->renderFilter($this, $this->getItems(), 0);
+endif;
+?>
+

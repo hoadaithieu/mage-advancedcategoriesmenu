@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<catalog_category_layered>
+		<reference name="head">
+			<action method="addItem" ifconfig="vc_advancedcategoriesmenu/general/enable">
+				<type>skin_css</type>
+				<name>vc_advancedcategoriesmenu/css/theme.css</name><params/>
+			</action>
+			
+			<action method="addItem" ifconfig="vc_advancedcategoriesmenu/general/enable">
+				<type>skin_js</type>
+				<name>vc_advancedcategoriesmenu/js/jquery.ntm.js</name><params/>
+			</action>
+			
+		</reference>	
+		<reference name="content">
+			<block type="vc_advancedcategoriesmenu/js" name="vc_advancedcategoriesmenu.js" as="vc_advancedcategoriesmenu.js">
+				<action method="setTemplate" ifconfig="vc_advancedcategoriesmenu/general/enable"><template>vc_advancedcategoriesmenu/js.phtml</template></action>
+			</block>
+		</reference>
+	</catalog_category_layered>
+	
+</layout>
